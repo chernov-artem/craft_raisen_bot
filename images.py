@@ -37,6 +37,18 @@ def create_all():
     return find_coordinates('images/create_all.png')
 
 def makros_icon():
-    return find_coordinates('images/makros_btn.png')
+    return find_coordinates('images/makros_icon.png')
+def sewing_icon():
+    return find_coordinates('images/sewing_icon.png')
 
+def craft_icon():
+    return find_coordinates('images/craft_icon.png')
 
+def agree_btn():
+    return find_coordinates('images/agree_btn.png')
+
+def prinat_btn():
+    return find_coordinates('images/prinat.png')
+
+def orders_craft_menu():
+    return find_coordinates('images/orders_craft_menu.png')
