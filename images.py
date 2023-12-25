@@ -33,4 +33,10 @@ def take_order():
 def cross():
     return find_coordinates('images/cross.png')
 
+def create_all():
+    return find_coordinates('images/create_all.png')
+
+def makros_icon():
+    return find_coordinates('images/makros_btn.png')
+
 
