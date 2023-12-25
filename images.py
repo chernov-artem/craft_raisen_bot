@@ -52,3 +52,11 @@ def prinat_btn():
 
 def orders_craft_menu():
     return find_coordinates('images/orders_craft_menu.png')
+
+def menu_btn():
+    return find_coordinates('images/menu_btn.png')
+def missions():
+    return find_coordinates('images/missions.png')
+
+def orders_on_missions_menu():
+    return find_coordinates('images/orders_on_missions_menu.png')

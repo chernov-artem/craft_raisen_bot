@@ -115,38 +115,72 @@ def craft_new_order():
         move_and_clic(1200, 500)
     time.sleep(0.59)
 
-def find_fail():
+def find_fail() -> bool:
     "функция поиска фейла крафта"
     if images.ready_order() == None:
         print('нет фейла')
+        return True
     else:
         print("фейл!")
-    xy_tmp = images.orders_craft_menu()
-    # if xy_tmp != None:
-    #     x, y = xy_tmp[0], xy_tmp[1]
-    #     print(x, y)
-    #     move_and_clic(x + 90, y + 24)
-    # else:
-    #     move_and_clic(1200, 500)
-    # time.sleep(0.59)
+        return False
+
+
+def cancel_order():
+    "функция отмены заказа"
+    xy_tmp = images.menu_btn()
+    if xy_tmp != None:
+        x, y = xy_tmp[0], xy_tmp[1]
+        print(x, y)
+        move_and_clic(x + 2, y + 3)
+        # mouse.click('left')
+    else:
+        move_and_clic(1200, 500)
+    time.sleep(0.5)
+    xy_tmp = images.missions()
+    if xy_tmp != None:
+        x, y = xy_tmp[0], xy_tmp[1]
+        print(x, y)
+        move_and_clic(x + 12, y + 5)
+    else:
+        move_and_clic(1200, 500)
+    time.sleep(0.5)
+    xy_tmp = images.orders_on_missions_menu()
+    if xy_tmp != None:
+        x, y = xy_tmp[0], xy_tmp[1]
+        print(x, y)
+        move_and_clic(x + 12, y + 5)
+    else:
+        move_and_clic(1200, 500)
+    time.sleep(0.15)
+    move_and_clic(xy_tmp[0] + 27, xy_tmp[1] + 85)
+    time.sleep(0.15)
+    move_and_clic(xy_tmp[0] + 13, xy_tmp[1] + 488)
+    prinat_btn()
+    time.sleep(0.33)
+    cross()
+
+
 
 def craft_period():
     cross()
     select_npc()
     orders_btn()
     ready_order()
-    prinat_btn()
+    if images.prinat_btn():
+        prinat_btn()
+    else:
+        cancel_order()
     time.sleep(2)
     select_npc()
     orders_btn()
     take_order()
     agree_btn()
+    select_sewing()
+    craft_new_order()
+    create_all()
 
 time.sleep(2)
 
-# craft_period()
-# select_sewing()
-# craft_new_order()
-# create_all()
+craft_period()
 
-find_fail()
+
