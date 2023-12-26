@@ -24,7 +24,7 @@ def orders_btn():
         print(x, y)
         move_and_clic(x + 24, y + 8)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.5)
 
 def take_order():
@@ -35,7 +35,7 @@ def take_order():
         print(x, y)
         move_and_clic(x + 24, y + 8)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.5)
 
 def ready_order():
@@ -46,7 +46,7 @@ def ready_order():
         print(x, y)
         move_and_clic(x + 24, y + 8)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.5)
 
 def cross():
@@ -59,7 +59,7 @@ def cross():
         # mouse.click('left')
         # mouse.click('left')
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.53)
 
 def create_all():
@@ -70,7 +70,7 @@ def create_all():
         print(x, y)
         move_and_clic(x + 44, y + 7)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.5)
 
 def agree_btn():
@@ -81,7 +81,7 @@ def agree_btn():
         print(x, y)
         move_and_clic(x + 44, y + 7)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.58)
 def prinat_btn():
     "функция нажатия на кнопку принять"
@@ -91,7 +91,7 @@ def prinat_btn():
         print(x, y)
         move_and_clic(x + 44, y + 7)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.59)
 
 def select_sewing():
@@ -102,7 +102,7 @@ def select_sewing():
         print(x, y)
         move_and_clic(x + 4, y + 7)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.49)
 def craft_new_order():
     "функция нажатия на заказ в меню заданий"
@@ -112,7 +112,7 @@ def craft_new_order():
         print(x, y)
         move_and_clic(x + 90, y + 24)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.59)
 
 def find_fail() -> bool:
@@ -134,7 +134,7 @@ def cancel_order():
         move_and_clic(x + 2, y + 3)
         # mouse.click('left')
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.5)
     xy_tmp = images.missions()
     if xy_tmp != None:
@@ -142,7 +142,7 @@ def cancel_order():
         print(x, y)
         move_and_clic(x + 12, y + 5)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.5)
     xy_tmp = images.orders_on_missions_menu()
     if xy_tmp != None:
@@ -150,7 +150,7 @@ def cancel_order():
         print(x, y)
         move_and_clic(x + 12, y + 5)
     else:
-        move_and_clic(1200, 500)
+        move_and_clic(350, 955)
     time.sleep(0.15)
     move_and_clic(xy_tmp[0] + 27, xy_tmp[1] + 85)
     time.sleep(0.15)
@@ -179,8 +179,15 @@ def craft_period():
     craft_new_order()
     create_all()
 
-time.sleep(2)
+def multi_craft(n: int):
+    for i in range(n):
+        craft_period()
+        time.sleep(155)
 
-craft_period()
+
+time.sleep(3)
+multi_craft(40)
+
+
 
 
