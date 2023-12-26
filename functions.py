@@ -124,6 +124,15 @@ def find_fail() -> bool:
         print("фейл!")
         return False
 
+def craft_done():
+    "функция проверки окончания крафта"
+    if images.craft_done() != None:
+        return True
+    else:
+        print('ещё 5 секунд')
+        time.sleep(5)
+        return craft_done()
+
 
 def cancel_order():
     "функция отмены заказа"
@@ -181,12 +190,16 @@ def craft_period():
 
 def multi_craft(n: int):
     for i in range(n):
+        print('итерация ', i)
         craft_period()
-        time.sleep(155)
+        time.sleep(135)
+        if craft_done():
+            print('закончили крафт')
 
 
-time.sleep(3)
-multi_craft(40)
+time.sleep(2)
+
+multi_craft(11)
 
 
 

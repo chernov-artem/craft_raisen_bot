@@ -60,3 +60,6 @@ def missions():
 
 def orders_on_missions_menu():
     return find_coordinates('images/orders_on_missions_menu.png')
+
+def craft_done():
+    return find_coordinates('images/craft_done.png')
