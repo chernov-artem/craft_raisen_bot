@@ -189,6 +189,7 @@ def craft_period():
     create_all()
 
 def multi_craft(n: int):
+    "функция полного цикла крафта. Принимает на вход количество нужных итераций крафта"
     for i in range(n):
         print('итерация ', i)
         craft_period()
@@ -199,7 +200,7 @@ def multi_craft(n: int):
 
 time.sleep(2)
 
-multi_craft(11)
+multi_craft(9)
 
 
 
