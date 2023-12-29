@@ -4,6 +4,8 @@ import time
 import images
 from move_functions import move_and_clic, move_and_right_clic
 
+"""Модуль с основными функциями"""
+
 
 def select_npc():
     "функция нажатия на кнопку макроса, который выбирает нпс "
@@ -171,6 +173,7 @@ def cancel_order():
 
 
 def craft_period():
+    "функция крафта на 1 итерацию"
     cross()
     select_npc()
     orders_btn()
@@ -193,14 +196,14 @@ def multi_craft(n: int):
     for i in range(n):
         print('итерация ', i)
         craft_period()
-        time.sleep(135)
+        time.sleep(95)
         if craft_done():
             print('закончили крафт')
 
 
 time.sleep(2)
 
-multi_craft(9)
+multi_craft(8)
 
 
 
