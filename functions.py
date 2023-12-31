@@ -18,6 +18,18 @@ def select_npc():
         move_and_clic(1200, 500)
     time.sleep(1.5)
 
+def select_work_bench():
+    """функция нажатия на кнопку макроса, который выбирает верстака. Верстак нужно пометить знаком 2
+    и написать макрос для его выбора """
+    xy_tmp = images.makros_icon2()
+    if xy_tmp != None:
+        x, y = xy_tmp[0], xy_tmp[1]
+        print(x, y)
+        move_and_clic(x + 24, y + 8)
+    else:
+        move_and_clic(1200, 500)
+    time.sleep(1.5)
+
 def orders_btn():
     "функция нажатия на кнопку 'заказы' "
     xy_tmp = images.oders_btn()
@@ -187,6 +199,7 @@ def craft_period():
     orders_btn()
     take_order()
     agree_btn()
+
     select_sewing()
     craft_new_order()
     create_all()
@@ -196,14 +209,14 @@ def multi_craft(n: int):
     for i in range(n):
         print('итерация ', i)
         craft_period()
-        time.sleep(95)
+        time.sleep(55)
         if craft_done():
             print('закончили крафт')
 
 
 time.sleep(2)
 
-multi_craft(8)
+# multi_craft(77)
 
 
 

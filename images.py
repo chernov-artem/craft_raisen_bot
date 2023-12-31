@@ -40,6 +40,9 @@ def create_all():
 
 def makros_icon():
     return find_coordinates('images/makros_icon.png')
+def makros_icon2():
+    return find_coordinates('images/makros_icon2.png')
+
 def sewing_icon():
     return find_coordinates('images/sewing_icon.png')
 
