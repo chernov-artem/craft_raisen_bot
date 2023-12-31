@@ -145,6 +145,7 @@ def find_fail() -> bool:
 
 def craft_done():
     "функция проверки окончания крафта"
+    time.sleep(1)
     if images.craft_done() != None:
         return True
     else:
@@ -204,8 +205,8 @@ def craft_period():
     orders_btn()
     take_order()
     agree_btn()
-
-    select_craft()
+    select_work_bench()
+    # select_craft()
     craft_new_order()
     create_all()
 
@@ -216,12 +217,13 @@ def multi_craft(n: int):
         craft_period()
         time.sleep(55)
         if craft_done():
+            time.sleep(2)
             print('закончили крафт')
 
-
-time.sleep(2)
-
-# multi_craft(77)
+#
+# time.sleep(2)
+#
+# multi_craft(2)
 
 
 
