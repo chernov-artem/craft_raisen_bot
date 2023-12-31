@@ -108,9 +108,11 @@ def prinat_btn():
         move_and_clic(350, 955)
     time.sleep(0.59)
 
-def select_sewing():
-    "функция нажатия на иконку шитья"
-    xy_tmp = images.sewing_icon()
+def select_craft():
+    """функция нажатия на иконку иконку крафта. Или для каждого крафта вручную менять иконку или сделать
+    универсальный макрос выбора иконки крафта
+"""
+    xy_tmp = images.smithing_icon()
     if xy_tmp != None:
         x, y = xy_tmp[0], xy_tmp[1]
         print(x, y)
@@ -118,6 +120,9 @@ def select_sewing():
     else:
         move_and_clic(350, 955)
     time.sleep(0.49)
+
+
+
 def craft_new_order():
     "функция нажатия на заказ в меню заданий"
     xy_tmp = images.orders_craft_menu()
@@ -200,7 +205,7 @@ def craft_period():
     take_order()
     agree_btn()
 
-    select_sewing()
+    select_craft()
     craft_new_order()
     create_all()
 
