@@ -112,14 +112,14 @@ def select_craft():
     """функция нажатия на иконку иконку крафта. Или для каждого крафта вручную менять иконку или сделать
     универсальный макрос выбора иконки крафта
 """
-    xy_tmp = images.smithing_icon()
+    xy_tmp = images.makros_icon()
     if xy_tmp != None:
         x, y = xy_tmp[0], xy_tmp[1]
         print(x, y)
         move_and_clic(x + 4, y + 7)
     else:
         move_and_clic(350, 955)
-    time.sleep(0.49)
+    time.sleep(0.89)
 
 
 
@@ -220,10 +220,6 @@ def multi_craft(n: int):
             time.sleep(2)
             print('закончили крафт')
 
-#
-# time.sleep(2)
-#
-# multi_craft(2)
 
 
 

@@ -12,13 +12,16 @@ def find_coordinates(tmp: str) -> tuple:
     pag.screenshot('screenshot.png')
     time.sleep(0.3)
     template = cv2.imread(tmp, cv2.IMREAD_GRAYSCALE)
+    cv2.imshow('1', template)
     image = cv2.imread('screenshot.png')
+    cv2.imshow('2', image)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     # Поиск совпадения
     result = cv2.matchTemplate(gray, template, cv2.TM_CCOEFF_NORMED)
     threshold = 0.9
     loc = np.where(result >= threshold)
+    print(loc)
 
     for pt in zip(*loc[::-1]):
         return pt
@@ -71,3 +74,6 @@ def orders_on_missions_menu():
 
 def craft_done():
     return find_coordinates('images/craft_done.png')
+
+
+
