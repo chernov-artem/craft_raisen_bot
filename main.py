@@ -10,4 +10,5 @@ if __name__ == '__main__':
     # print(images.take_order())
     # functions.select_work_bench()
 
+
     functions.multi_craft(4)
