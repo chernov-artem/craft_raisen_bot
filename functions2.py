@@ -35,6 +35,28 @@ class Instructions():
             mouse.click('left')
 
     @classmethod
+    def find_fail(cls) -> bool:
+        "функция поиска фейла крафта"
+        if images.find_coordinates('images/ready_order.png') == None:
+            # print('нет фейла')
+            return True
+        else:
+            # print("фейл!")
+            return False
+
+    @classmethod
+    def cancel_order(cls):
+        "метод отмены заказа"
+        cross.clic(-20, -4)
+        menu_btn.clic()
+        missions.clic()
+        orders_on_missions_menu.clic()
+        orders_on_missions_menu.clic(25, 80)
+        orders_on_missions_menu.clic(13, 486)
+        contune.clic()
+        cross.clic(-20, -4)
+
+    @classmethod
     def craft_risen(cls):
         "основной метод для прокачки крафта"
         npc.clic(0, 0, 3)
@@ -43,6 +65,10 @@ class Instructions():
         contune.clic()
         npc.clic()
         orders_btn.clic()
+        if Instructions.find_fail():
+            pass
+        else:
+            Instructions.cancel_order()
         take_order.clic()
         agree_btn.clic()
         table.clic(0, 0, 4)
@@ -78,10 +104,16 @@ take_order = Item('take_order.png')
 agree_btn = Item('agree_btn.png')
 learned = Item('learned.png')
 create_all_btn = Item('create_all.png')
+cross = Item('cross.png')
+menu_btn = Item('menu_btn.png')
+missions = Item('missions.png')
+orders_on_missions_menu = Item('orders_on_missions_menu.png')
+
 
 time.sleep(2)
 # learned.clic(130, 100)
-# for i in range(33):
-#     Instructions.two_window_craft()
+for i in range(33):
+    Instructions.two_window_craft()
 
-agree_btn.clic()
+
+
