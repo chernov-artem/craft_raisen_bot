@@ -28,7 +28,6 @@ def find_coordinates(tmp: str) -> tuple:
 
 def oders_btn():
     return find_coordinates('images/orders.png')
-
 def ready_order():
     return find_coordinates('images/ready_order.png')
 
@@ -41,11 +40,12 @@ def cross():
 def create_all():
     return find_coordinates('images/create_all.png')
 
-def makros_icon():
-    return find_coordinates('images/makros_icon.png')
-def makros_icon2():
-    return find_coordinates('images/makros2_icon.png')
-
+def makros_icon3():
+    return find_coordinates('images/makros_icon3.png')
+def makros_icon4():
+    return find_coordinates('images/makros_icon4.png')
+def makros_icon5():
+    return find_coordinates('images/makros_icon5.png')
 def sewing_icon():
     return find_coordinates('images/sewing_icon.png')
 
@@ -59,7 +59,7 @@ def agree_btn():
     return find_coordinates('images/agree_btn.png')
 
 def prinat_btn():
-    return find_coordinates('images/prinat.png')
+    return find_coordinates('images/contune.png')
 
 def orders_craft_menu():
     return find_coordinates('images/orders_craft_menu.png')
