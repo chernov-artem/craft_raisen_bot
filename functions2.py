@@ -18,6 +18,16 @@ class Item():
             move_and_clic(1200, 500)
         time.sleep(1.5 + delay)
 
+    def full_clic(self):
+        def tmp():
+            self.clic(-20, -4)
+            if images.find_coordinates(str('images/' + self.src)) != None:
+                return tmp()
+
+        tmp()
+        cross2.clic(-20, -4)
+
+
 class Instructions():
     "класс инструкций"
 
@@ -54,7 +64,7 @@ class Instructions():
         orders_on_missions_menu.clic(25, 80)
         orders_on_missions_menu.clic(13, 486)
         contune.clic()
-        cross.clic(-20, -4)
+        cross.full_clic()
 
     @classmethod
     def craft_risen(cls):
@@ -69,6 +79,8 @@ class Instructions():
             pass
         else:
             Instructions.cancel_order()
+            npc.clic()
+            orders_btn.clic()
         take_order.clic()
         agree_btn.clic()
         table.clic(0, 0, 4)
@@ -77,14 +89,14 @@ class Instructions():
         create_all_btn.clic()
 
     @classmethod
-    def two_window_craft(cls):
+    def two_window_craft(cls, delay = 0):
         'метод прокачки крафта в 2 окна'
         Instructions.switch_window()
         Instructions.craft_risen()
         time.sleep(2)
         Instructions.switch_window(2)
         Instructions.craft_risen()
-        time.sleep(35)
+        time.sleep(35 + delay)
 
 
 
@@ -105,6 +117,7 @@ agree_btn = Item('agree_btn.png')
 learned = Item('learned.png')
 create_all_btn = Item('create_all.png')
 cross = Item('cross.png')
+cross2= Item('cross2.png')
 menu_btn = Item('menu_btn.png')
 missions = Item('missions.png')
 orders_on_missions_menu = Item('orders_on_missions_menu.png')
@@ -112,8 +125,8 @@ orders_on_missions_menu = Item('orders_on_missions_menu.png')
 
 time.sleep(2)
 # learned.clic(130, 100)
-for i in range(33):
-    Instructions.two_window_craft()
+for i in range(95):
+    Instructions.two_window_craft(95)
 
 
 
