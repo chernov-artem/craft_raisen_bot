@@ -125,8 +125,11 @@ orders_on_missions_menu = Item('orders_on_missions_menu.png')
 
 time.sleep(2)
 # learned.clic(130, 100)
-for i in range(95):
-    Instructions.two_window_craft(145)
 
+# for i in range(35):
+#     Instructions.two_window_craft(145)
 
+for i in range(15):
+    Instructions.craft_risen()
+    time.sleep(145)
 
